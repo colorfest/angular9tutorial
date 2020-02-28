@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Character } from "../../models/character";
 
 @Component({
   selector: 'app-character-demo',
@@ -6,30 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./character-demo.component.sass']
 })
 export class CharacterDemoComponent {
-
-  // create character properties
-  firstName: string;
-  lastName: string;
-  age: number;
-  presID: number;
-  hasChildren: boolean;
-  exWives: string[];
-  numberOfTweetsThisMonth: number[];
-  mixedArray: any[];
-  tupleArray: [boolean, number, string];
-
+  character: Character;
 
   constructor() {
-    this.firstName = `Donald`;
-    this.lastName = `Trump`;
-    this.age = 73;
-    this.presID = 45;
-
-    this.hasChildren = true;
-    this.exWives = ['Ivana Zelnickova', 'Marla Maples', 'Melania Knauss'];
-    this.numberOfTweetsThisMonth = [12, 5, 23, 5];
-    this.mixedArray = [true, true, 'Bernie', 'USA', 0, false, 'New York'];
-    this.tupleArray = [false, 100, 'Donald Jr'];
+    this.character = {
+      firstName: `Donald`,
+      lastName: `Trump`,
+      age: 73,
+      presID: 45,
+      details: {
+        spouse: `Melania Trump`,
+        partyAffiliation: `Republican Party`,
+        termsInOffice: 1,
+        vicePresident: `Mike Pence`
+      }
+    }
   }
 
 }
