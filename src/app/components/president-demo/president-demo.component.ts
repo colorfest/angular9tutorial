@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Presidents } from "../../interfaces/presidents";
 
 @Component({
   selector: 'app-president-demo',
@@ -6,29 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./president-demo.component.sass']
 })
 export class PresidentDemoComponent implements OnInit {
-
-  // create president properties
-  firstName: string;
-  lastName: string;
-  age: number;
-  presID: number;
-  hasChildren: boolean;
-  wives: string[];
-  numberOfTweets: number[];
-  mixedArray: any[];
-  tupleArray: [boolean, number, string];
+  presidents: Presidents;
 
   constructor() {
-    this.firstName = `Donald`;
-    this.lastName = `Trump`;
-    this.age = 73;
-    this.presID = 45;
-
-    this.hasChildren = true;
-    this.wives = [`Melania Krauss`, `Marla Maples`, `Ivana Zelnickova`];
-    this.numberOfTweets = [12, 5, 23, 5];
-    this.mixedArray = [true, true, `Bernie`, `Biden`, `USA`, 0, false, `New York`];
-    this.tupleArray = [false, 100, `Pence`];
+    this.presidents = {
+      firstName: `Donald`,
+      lastName: `Trump`,
+      age: 73,
+      presId: 45,
+      details: {
+        spouse: `Melania Trump`,
+        partyAffiliation: `Republican Party`,
+        termsInOffice: 1,
+        vicePresident: `Mike Pence`
+      }
+    }
   }
 
   ngOnInit(): void {

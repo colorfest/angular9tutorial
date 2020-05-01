@@ -1,6 +1,10 @@
 <h1 class="capitalize">Presidents</h1>
-<h2>{{ firstName }} {{ lastName }}</h2>
-
-<p>{{ lastName }} is the {{ presID }}th President of the United States at age {{ age }}.</p>
-
-<h3>Current Spouse: {{ wives[0] }}</h3>
+<h2>{{ presidents.firstName }} {{ presidents.lastName }}</h2>
+<p>{{ presidents.firstName }} is the {{ presidents.presId }}th President of the United States of America.</p>
+<h3>Profile:</h3>
+<ul>
+    <li>Spouse: {{ presidents.details.spouse }}</li>
+    <li>Party Affiliation: {{ presidents.details.partyAffiliation }}</li>
+    <li>Terms In Office: {{ presidents.details.termsInOffice }}</li>
+    <li>Vice-President: {{ presidents.details.vicePresident }}</li>
+</ul>
