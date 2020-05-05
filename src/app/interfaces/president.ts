@@ -1,6 +1,7 @@
-export interface Presidents {
+export interface President {
     firstName: string,
     lastName: string,
+    middleInitial: string,
     age: number,
     presId: number,
     details: {
