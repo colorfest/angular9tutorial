@@ -10,6 +10,9 @@ export class PresidentDemoComponent implements OnInit {
   presidents: Presidents;
 
   constructor() {
+  }
+
+  ngOnInit(): void {
     this.presidents = {
       firstName: `Donald`,
       lastName: `Trump`,
@@ -22,9 +25,6 @@ export class PresidentDemoComponent implements OnInit {
         vicePresident: `Mike Pence`
       }
     }
-  }
-
-  ngOnInit(): void {
   }
 
 }
