@@ -1,8 +1,8 @@
 <h2>Presidents</h2>
-<ul>
+<ul *ngIf="presidents?.length > 0">
     <li *ngFor="let president of presidents">
-        <h3>{{ president.firstName}} {{ president.middleInitial }}. {{ president.lastName }}</h3>
-        <ul>
+        <h3>{{ president.firstName}} {{ president.middleInitial }} {{ president.lastName }}</h3>
+        <ul *ngIf="showDetails">
             <li>Age: {{ president.age }}</li>
             <li>PresId: {{ president.presId }}</li>
             <li>Spouse: {{ president.details.spouse }}</li>
@@ -12,3 +12,16 @@
         </ul>
     </li>
 </ul>
+
+<div *ngIf="presidents?.length == 0 || !presidents">
+    <h2>No Users Found</h2>
+</div>
+
+<div *ngIf="!dataLoaded">
+    <h2>Loading...</h2>
+</div>
+
+
+<button (click)="showHideDetails()">Toggle Details</button>
+
+

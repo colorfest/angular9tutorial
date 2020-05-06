@@ -8,51 +8,63 @@ import { President } from '../../interfaces/president';
 })
 export class PresidentsComponent implements OnInit {
   presidents: President[];
+  showDetails: boolean = false;
+  dataLoaded: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.presidents = [
-      {
-        firstName: `Donald`,
-        lastName: `Trump`,
-        middleInitial:  `J`,
-        age: 73,
-        presId: 45,
-        details: {
-          spouse: `Melania Trump`,
-          partyAffiliation: `Republican Party`,
-          termsInOffice: 1,
-          vicePresident: `Mike Pence`
+    // set presidents
+    setTimeout(() => {
+      this.presidents = [
+        {
+          firstName: `Donald`,
+          lastName: `Trump`,
+          middleInitial:  `J.`,
+          age: 73,
+          presId: 45,
+          details: {
+            spouse: `Melania Trump`,
+            partyAffiliation: `Republican Party`,
+            termsInOffice: 1,
+            vicePresident: `Mike Pence`
+          }
+        },
+        {
+          firstName: `Barack`,
+          lastName: `Obama`,
+          age: 54,
+          presId: 44,
+          details: {
+            spouse: `Michelle Obama`,
+            partyAffiliation: `Democratic Party`,
+            termsInOffice: 2,
+            vicePresident: `Joe Biden`
+          }
+        },
+        {
+          firstName: `George`,
+          lastName: `Bush`,
+          middleInitial: `W.`,
+          age: 73,
+          presId: 43,
+          details: {
+            spouse: `Laura Bush`,
+            partyAffiliation: `Republican Party`,
+            termsInOffice: 2,
+            vicePresident: `Dick Cheney`
+          }
         }
-      },
-      {
-        firstName: `Barack`,
-        lastName: `Obama`,
-        middleInitial: `H`,
-        age: 54,
-        presId: 44,
-        details: {
-          spouse: `Michelle Obama`,
-          partyAffiliation: `Democratic Party`,
-          termsInOffice: 2,
-          vicePresident: `Joe Biden`
-        }
-      },
-      {
-        firstName: `George`,
-        lastName: `Bush`,
-        middleInitial: `W`,
-        age: 73,
-        presId: 43,
-        details: {
-          spouse: `Laura Bush`,
-          partyAffiliation: `Republican Party`,
-          termsInOffice: 2,
-          vicePresident: `Dick Cheney`
-        }
-      }
-    ]
+      ]
+  
+      // set conditionals
+      this.dataLoaded = true;
+    }, 2000);
+  }
+
+  // toggle details
+  showHideDetails() {
+    this.showDetails = !this.showDetails;
   }
 
 }
