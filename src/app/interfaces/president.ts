@@ -4,6 +4,7 @@ export interface President {
     middleInitial?: string,
     age?: number,
     presId?: number,
+    img?: string,
     details: {
         spouse?: string,
         termsInOffice?: number,

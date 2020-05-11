@@ -11,22 +11,31 @@
     </div>
 
     <div class="row row-cols-1 row-cols md-2" *ngIf="presidents?.length > 0">
-        <div class="col md-4" *ngFor="let president of presidents">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h3 class="card-title">{{ president.firstName}} {{ president.middleInitial }} 
-                        {{ president.lastName }}
-                    </h3>
-                    <ul *ngIf="showDetails">
-                        <li>Age: {{ president.age }}</li>
-                        <li>PresId: {{ president.presId }}</li>
-                        <li>Spouse: {{ president.details.spouse }}</li>
-                        <li>Party Affiliation: {{ president.details.partyAffiliation }}</li>
-                        <li>Terms In Office: {{ president.details.termsInOffice }}</li>
-                        <li>Vice President: {{ president.details.vicePresident }}</li>
-                    </ul>
+        <div class="card-group">
+
+            <div class="col md-4" *ngFor="let president of presidents">
+                <div class="card h-100">
+                    <img *ngIf="president.img"
+                        [src]="president.img"
+                        alt="{{ president.firstName }} {{ president.lastName }}"
+                        class="img-thumbnail"
+                    />
+                    <div class="card-body">
+                        <h3 class="card-title">{{ president.firstName}} {{ president.middleInitial }} 
+                            {{ president.lastName }}
+                        </h3>
+                        <ul *ngIf="showDetails">
+                            <li>Age: {{ president.age }}</li>
+                            <li>PresId: {{ president.presId }}</li>
+                            <li>Spouse: {{ president.details.spouse }}</li>
+                            <li>Party Affiliation: {{ president.details.partyAffiliation }}</li>
+                            <li>Terms In Office: {{ president.details.termsInOffice }}</li>
+                            <li>Vice President: {{ president.details.vicePresident }}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 
