@@ -5,6 +5,7 @@ export interface President {
     age?: number,
     presId?: number,
     img?: string,
+    current?: boolean,
     details: {
         spouse?: string,
         termsInOffice?: number,

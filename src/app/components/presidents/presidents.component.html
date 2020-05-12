@@ -3,7 +3,7 @@
 <div class="container">
 
     <div class="row-cols-1">
-        <button class="btn btn-primary btn-lg btn-block" type="button"
+        <button class="btn btn-primary btn-lg btn-block mb-3" type="button"
             (click)="showHideDetails()"
             *ngIf="dataLoaded">
             Toggle Details
@@ -14,14 +14,14 @@
         <div class="card-group">
 
             <div class="col md-4" *ngFor="let president of presidents">
-                <div class="card h-100">
+                <div class="card h-100 mb-3" [class.border-primary]="president.current">
                     <img *ngIf="president.img"
                         [src]="president.img"
                         alt="{{ president.firstName }} {{ president.lastName }}"
                         class="img-thumbnail"
                     />
                     <div class="card-body">
-                        <h3 class="card-title">{{ president.firstName}} {{ president.middleInitial }} 
+                        <h3 class="card-title" [ngStyle]="underlineStyle">{{ president.firstName}} {{ president.middleInitial }} 
                             {{ president.lastName }}
                         </h3>
                         <ul *ngIf="showDetails">
