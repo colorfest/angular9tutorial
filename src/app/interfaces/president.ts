@@ -3,6 +3,7 @@ export interface President {
     lastName: string,
     middleInitial?: string,
     age?: number,
+    birthday?: any,
     presId?: number,
     img?: string,
     current?: boolean,

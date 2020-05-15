@@ -24,6 +24,7 @@ export class PresidentsComponent implements OnInit {
           lastName: `Trump`,
           middleInitial:  `J.`,
           age: 73,
+          birthday: new Date(`06/14/1946`),
           presId: 45,
           img: `https://d3i6fh83elv35t.cloudfront.net/static/2019/09/2019-09-29T133251Z_1883087259_RC1901EB47F0_RTRMADP_3_USA-TRUMP-WHISTLEBLOWER-1024x681.jpg`,
           current: true,
@@ -38,6 +39,7 @@ export class PresidentsComponent implements OnInit {
           firstName: `Barack`,
           lastName: `Obama`,
           age: 54,
+          birthday: new Date(`08/04/1961`),
           presId: 44,
           img: `https://s.abcnews.com/images/Politics/obama-gty-er-200505_hpMain_16x9_992.jpg`,
           current: false,
@@ -53,6 +55,7 @@ export class PresidentsComponent implements OnInit {
           lastName: `Bush`,
           middleInitial: `W.`,
           age: 73,
+          birthday: new Date(`07/06/1946`),
           presId: 43,
           details: {
             spouse: `Laura Bush`,
@@ -65,7 +68,7 @@ export class PresidentsComponent implements OnInit {
   
       // set conditionals
       this.dataLoaded = true;
-    }, 2000);
+    }, 100);
 
     this.checkPresidentStyles();
   }

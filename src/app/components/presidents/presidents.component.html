@@ -25,6 +25,7 @@
                         </h3>
                         <ul *ngIf="showDetails">
                             <li>Age: {{ president.age }}</li>
+                            <li>Birthday: {{ president.birthday | date }}</li>
                             <li>PresId: {{ president.presId }}</li>
                             <li>Spouse: {{ president.details.spouse }}</li>
                             <li>Party Affiliation: {{ president.details.partyAffiliation }}</li>
