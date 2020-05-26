@@ -7,6 +7,7 @@ export interface President {
     presId?: number,
     img?: string,
     current?: boolean,
+    display?: boolean,
     details: {
         spouse?: string,
         termsInOffice?: number,

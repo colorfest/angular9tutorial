@@ -2,14 +2,6 @@
 
 <div class="container">
 
-    <div class="row-cols-1">
-        <button class="btn btn-primary btn-lg btn-block mb-3" type="button"
-            (click)="showHideDetails()"
-            *ngIf="dataLoaded">
-            Toggle Details
-        </button>
-    </div>
-
     <div class="row row-cols-1 row-cols md-2" *ngIf="presidents?.length > 0">
         <div class="card-group">
             <div class="col md-4" *ngFor="let president of presidents">
@@ -22,8 +14,12 @@
                     <div class="card-body">
                         <h3 class="card-title" [ngStyle]="underlineStyle">{{ president.firstName}} {{ president.middleInitial }} 
                             {{ president.lastName }}
+                            <button class="btn btn-primary" (click)="president.display = !president.display">
+                                <span *ngIf="!president.display">Show</span>
+                                <span *ngIf="president.display">Hide</span>
+                            </button>
                         </h3>
-                        <ul *ngIf="showDetails">
+                        <ul *ngIf="president.display">
                             <li>Age: {{ president.age }}</li>
                             <li>Birthday: {{ president.birthday | date }}</li>
                             <li>PresId: {{ president.presId }}</li>
