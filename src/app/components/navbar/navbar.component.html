@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary mb-4">
+    <div class="countainer">
+        <a routerLink="/" class="navbar-brand">Presidents App</a>
+    </div>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="/presidents" class="nav-link">Presidents</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+            <a routerLink="/upload" class="nav-link">Upload</a>
+        </li>
+    </ul>
+</nav>
