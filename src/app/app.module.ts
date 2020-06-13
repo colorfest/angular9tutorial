@@ -8,6 +8,7 @@ import { PresidentsComponent } from './components/presidents/presidents.componen
 import { HomeComponent } from './components/home/home.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     PresidentsComponent,
     HomeComponent,
     UploadComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
