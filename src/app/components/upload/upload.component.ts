@@ -12,4 +12,9 @@ export class UploadComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  inputEvent(e) {
+    console.log(e.type);
+    console.log(e.target.value);
+  }
+
 }

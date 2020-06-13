@@ -1,1 +1,17 @@
-<p>upload works!</p>
+<div class="container">
+    <h1>Upload Page</h1>
+
+    <div class="card card-body mb-3">
+        <h2>Add A New President</h2>
+
+        <form (submit)="uploadNewPresident($event)">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" (copy)="inputEvent($event)"
+                    class="form-control"
+                    name="firstName" />
+            </div>
+
+        </form>
+    </div>
+</div>
