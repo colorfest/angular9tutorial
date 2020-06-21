@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { President } from '../../interfaces/president';
 
 @Component({
   selector: 'app-upload',
@@ -9,12 +10,22 @@ export class UploadComponent implements OnInit {
 
   constructor() { }
 
+  president: President = {
+    firstName: '',
+    lastName: '',
+    details: {
+      partyAffiliation: '',
+      spouse: '',
+      termsInOffice: 0,
+      vicePresident: ''
+    }
+  }
+
   ngOnInit(): void {
   }
 
-  inputEvent(e) {
-    console.log(e.type);
-    console.log(e.target.value);
+  uploadNewPresident() {
+    console.log('upload new president');
   }
 
 }

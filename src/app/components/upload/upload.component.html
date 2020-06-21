@@ -4,14 +4,30 @@
     <div class="card card-body mb-3">
         <h2>Add A New President</h2>
 
-        <form (submit)="uploadNewPresident($event)">
+        <form (submit)="uploadNewPresident()">
             <div class="form-group">
                 <label>First Name</label>
-                <input type="text" (copy)="inputEvent($event)"
+                <input type="text"
+                    [(ngModel)]="president.firstName"
                     class="form-control"
                     name="firstName" />
             </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text"
+                    [(ngModel)]="president.lastName"
+                    class="form-control"
+                    name="lastName" />
+            </div>
+
+            <div>
+                <button 
+                type="submit"
+                [disabled]="president.firstName == '' || president.lastName == ''"
+                class="btn btn-block btn-primary mb-3">Add New President</button>
+            </div>
 
         </form>
+        <div>{{ president.firstName }} {{ president.lastName }}</div>
     </div>
 </div>
