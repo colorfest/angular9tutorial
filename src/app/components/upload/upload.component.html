@@ -8,43 +8,42 @@
             <div class="form-group">
                 <label>First Name</label>
                 <input 
+                    #presFirstName="ngModel"
                     type="text"
                     [(ngModel)]="president.firstName"
                     [ngClass]="{'is-invalid':presFirstName.errors && presFirstName.touched}"
                     class="form-control"
                     name="firstName"
-                    #presFirstName="ngModel"
                     required
-                    minlength="2"
-                    />
-                    
-                <!-- invalid div -->
+                    minlength="2" />
+
+                <!-- invalid reporting -->
                 <div [hidden]="!presFirstName.errors?.required"
                     class="invalid-feedback">First Name Required!</div>
-                <div [hidden]="!presFirstName.errors?.minlength" 
-                    class="invalid-feedback">Must have at least 2 characters!</div>
-            </div>
 
+                <div [hidden]="!presFirstName.errors?.minlength"
+                    class="invalid-feedback">First name must have at least 2 characters.</div>
+            </div>
             <div class="form-group">
                 <label>Last Name</label>
                 <input 
+                    #presLastName="ngModel"
                     type="text"
                     [(ngModel)]="president.lastName"
                     [ngClass]="{'is-invalid':presLastName.errors && presLastName.touched}"
                     class="form-control"
                     name="lastName"
-                    #presLastName="ngModel"
                     required
-                    minlength="2"
-                    />
-                    
-                <!-- invalid div -->
-                <div [hidden]="!presLastName.errors?.required"
-                    class="invalid-feedback">Last Name Required!</div>
-                <div [hidden]="!presLastName.errors?.minlength" 
-                    class="invalid-feedback">Must have at least 2 characters!</div>
+                    minlength="2" />
+
+                    <!-- invalid reporting -->
+                    <div [hidden]="!presLastName.errors?.required"
+                        class="invalid-feedback">Last Name Required!</div>
+    
+                    <div [hidden]="!presLastName.errors?.minlength"
+                        class="invalid-feedback">Last name must have at least 2 characters.</div>
             </div>
-            <div class="form-group">
+            <div class="form=group">
                 <label>Birthday</label>
                 <input type="text"
                     placeholder="MM/DD/YYYY"
@@ -67,14 +66,12 @@
                     name="img" />
             </div>
 
-            <div class="form-group">
+            <div>
                 <button 
                 type="submit"
                 [disabled]="!presidentForm.form.valid"
                 class="btn btn-block btn-primary mb-3">Add New President</button>
             </div>
-
         </form>
-        <div>{{ president.firstName }} {{ president.lastName }}</div>
     </div>
 </div>
